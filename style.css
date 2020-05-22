@@ -135,19 +135,20 @@ input[type="range"] {
   outline-color: transparent;
   border-radius: 5px;
   right: 48px;
-  top: 104px;
+  top: 48px;
   -webkit-appearance: slider-vertical;
 }
 
 div.animation-speed {
   position: fixed;
-  right: 48px;
+  right: 90px;
   top: 48px;
 }
 
 div.animation-speed span {
   float: right;
   width: 1em;
+  color: var(--text-secondary);
 }
 
 .button-highlight {
@@ -166,5 +167,9 @@ div.animation-speed span {
 
 span.marketShare {
   width: 20px;
+  color: var(--text-secondary);
+}
+
+p.description {
   color: var(--text-secondary);
 }

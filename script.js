@@ -131,7 +131,7 @@ const speedLabel = d3.select("div.animation-speed span");
 
 slider.addEventListener("input", function() {
   speed = slider.value;
-  const label = Math.round((initialSpeed / speed) * 10) / 10;
+  const label = `x${Math.round((initialSpeed / speed) * 10) / 10}`;
   speedLabel.text(label);
   if (monthIndex < data.length) {
     startLoop(monthIndex);
