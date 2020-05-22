@@ -7,8 +7,8 @@
 :root {
   --background: #111117;
   --text: #ffffff;
-  --disabled: hsla(0, 0%, 55%, 1);
-  --highlight: rgba(55, 106, 80, 1);
+  --text-secondary: #abc1f7;
+  --highlight: #376a50;
   --chrome: #f9d054;
   --ie: #2676d3;
   --firefox: #ed5e27;
@@ -156,11 +156,16 @@ div.animation-speed span {
 }
 
 .button-disabled {
-  color: var(--disabled) !important;
-  border: 1px solid var(--disabled) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--text-secondary) !important;
   cursor: not-allowed;
 }
 
 .button-disabled:hover {
   background-color: var(--background) !important;
+}
+
+span.marketShare {
+  width: 20px;
+  color: var(--text-secondary);
 }

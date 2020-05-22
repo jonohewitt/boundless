@@ -26,24 +26,18 @@ const updateGraph = function() {
   const monthFormat = d3.timeFormat("%b %Y");
   monthLabel.text(monthFormat(month));
 
-  // const labels = d3.selectAll("span.marketShare").data(data[monthIndex]);
-  // labels.text((d, i) => `(${d}%)`);
-
   const labels = d3.selectAll("span.marketShare").data(data[monthIndex]);
 
   labels
     .transition()
     .duration(speed)
     .tween("text", function(d, i) {
-      const startValue = this.innerText;
+      const startValue = this.innerText.replace(/\D/g, "");
       const endValue = d;
       const interpolator = d3.interpolateRound(startValue, endValue);
 
       return function(t) {
-        // this.innerText = interpolator(t);
-        this.innerText = `${interpolator(t)}`;
-        // this.innerText = `( ${interpolator(t)} %)`;
-        // this.innerText = "(" + interpolator(t) + "%)";
+        this.innerText = `(${interpolator(t)}%)`;
       };
     });
 
