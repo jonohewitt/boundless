@@ -7,6 +7,8 @@
 :root {
   --background: #111117;
   --text: #ffffff;
+  --disabled: hsla(0, 0%, 55%, 1);
+  --highlight: rgba(55, 106, 80, 1);
   --chrome: #f9d054;
   --ie: #2676d3;
   --firefox: #ed5e27;
@@ -47,13 +49,16 @@ h1 {
 
 div.month {
   position: fixed;
-  top: 48px;
-  right: 48px;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  text-align: center;
+  font-size: 24px;
 }
 
-a.restart {
+a.restart,
+a.pause {
   position: fixed;
-  bottom: 48px;
   right: 48px;
   padding: 8px 16px 8px 16px;
   border: 1px solid var(--text);
@@ -62,9 +67,19 @@ a.restart {
   min-width: 120px;
   color: var(--text);
   text-decoration: none;
+  transition: background-color 0.4s;
 }
 
-a.restart:hover {
+a.restart {
+  bottom: 48px;
+}
+
+a.pause {
+  bottom: 104px;
+}
+
+a.restart:hover,
+a.pause:hover {
   background-color: var(--text);
   color: var(--background);
 }
@@ -83,26 +98,69 @@ footer span {
   margin: 0 5px 0 0;
 }
 
-div.chrome span {
+div.chrome span.colorKey {
   background-color: var(--chrome);
 }
 
-div.ie span {
+div.ie span.colorKey {
   background-color: var(--ie);
 }
 
-div.firefox span {
+div.firefox span.colorKey {
   background-color: var(--firefox);
 }
 
-div.opera span {
+div.opera span.colorKey {
   background-color: var(--opera);
 }
 
-div.safari span {
+div.safari span.colorKey {
   background-color: var(--safari);
 }
 
-div.android span {
+div.android span.colorKey {
   background-color: var(--android);
+}
+
+input:focus {
+  outline-color: transparent;
+}
+
+input[type="range"] {
+  position: fixed;
+  height: 200px;
+  width: 5px;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  background-color: #fff;
+  outline-color: transparent;
+  border-radius: 5px;
+  right: 48px;
+  top: 104px;
+  -webkit-appearance: slider-vertical;
+}
+
+div.animation-speed {
+  position: fixed;
+  right: 48px;
+  top: 48px;
+}
+
+div.animation-speed span {
+  float: right;
+  width: 1em;
+}
+
+.button-highlight {
+  background-color: var(--highlight);
+}
+
+.button-disabled {
+  color: var(--disabled) !important;
+  border: 1px solid var(--disabled) !important;
+  cursor: not-allowed;
+}
+
+.button-disabled:hover {
+  background-color: var(--background) !important;
 }

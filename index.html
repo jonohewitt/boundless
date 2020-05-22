@@ -3,9 +3,15 @@
   <head>
     <link rel="stylesheet" href="/_base.css" />
     <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Boundless</title>
   </head>
   <body>
     <header>
@@ -13,19 +19,48 @@
       <p>An animated guide to browser usage over the last 10 years</p>
     </header>
 
+    <div class="animation-speed">
+      <p>Animation<br />Speed: <span>1</span>x</p>
+    </div>
+
+    <input
+      type="range"
+      min="50"
+      max="1000"
+      value="500"
+      orient="vertical"
+      class="speed"
+    />
     <div class="month"></div>
 
-    <a href="#" class="restart">Restart</a>
+    <a href="#" class="pause">Pause <i class="fas fa-pause"></i></a>
+    <a href="#" class="restart">Restart <i class="fas fa-undo-alt"></i></a>
 
     <svg></svg>
 
     <footer>
-      <div class="chrome"><span></span> Google Chrome</div>
-      <div class="ie"><span></span> Internet Explorer</div>
-      <div class="firefox"><span></span> Firefox</div>
-      <div class="safari"><span></span> Safari</div>
-      <div class="opera"><span></span> Opera</div>
-      <div class="android"><span></span> Android</div>
+      <div class="chrome">
+        <span class="colorKey"></span> Google Chrome
+        <span class="marketShare"></span>
+      </div>
+      <div class="ie">
+        <span class="colorKey"></span> Internet Explorer
+        <span class="marketShare"></span>
+      </div>
+      <div class="firefox">
+        <span class="colorKey"></span> Firefox
+        <span class="marketShare"></span>
+      </div>
+      <div class="safari">
+        <span class="colorKey"></span> Safari <span class="marketShare"></span>
+      </div>
+      <div class="opera">
+        <span class="colorKey"></span> Opera <span class="marketShare"></span>
+      </div>
+      <div class="android">
+        <span class="colorKey"></span> Android
+        <span class="marketShare"></span>
+      </div>
     </footer>
 
     <script src="/assets/data.js"></script>
