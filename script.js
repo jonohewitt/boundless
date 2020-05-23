@@ -34,10 +34,12 @@ const updateGraph = function() {
     .tween("text", function(d, i) {
       const startValue = this.innerText.replace(/\D/g, "");
       const endValue = d;
-      const interpolator = d3.interpolateRound(startValue, endValue);
+      const interpolator = d3.interpolate(startValue, endValue);
 
       return function(t) {
-        this.innerText = `(${interpolator(t)}%)`;
+        const share = interpolator(t);
+
+        this.innerText = share > 1 ? `(${Math.round(share)}%)` : "(<1%)";
       };
     });
 
