@@ -135,7 +135,7 @@ slider.addEventListener("input", function() {
   speed = slider.value;
   const label = `x${Math.round((initialSpeed / speed) * 10) / 10}`;
   speedLabel.text(label);
-  if (monthIndex < data.length) {
+  if (monthIndex < data.length && !paused) {
     startLoop(monthIndex);
   }
 });
