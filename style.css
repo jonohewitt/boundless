@@ -132,7 +132,7 @@ input[type="range"] {
   -webkit-appearance: none;
   -moz-apperance: none;
   background-color: #fff;
-  outline-color: transparent;
+  outline: transparent;
   border-radius: 5px;
   right: 48px;
   top: 48px;
